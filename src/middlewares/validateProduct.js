@@ -1,4 +1,4 @@
-const validateName = (req, res, next) => {
+const validateName = (req, _res, next) => {
   const { body: { name } } = req;
   if (!name) throw new Error('"name" is required', { cause: { statusCode: 400 } });
   if (name.length < 5) {

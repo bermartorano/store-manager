@@ -69,12 +69,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-03-23T02:26:17.938Z",
-    "modified": "2023-03-23T02:26:17.938Z",
+    "modified": "2023-03-23T23:05:41.925Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
+      "raw": "[\n  {\n    \"productId\": 10000,\n    \"quantity\": 1\n  },\n  {\n    \"quantity\": 5\n  }\n]",
       "form": []
     },
     "tests": []
