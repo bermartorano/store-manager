@@ -10,13 +10,10 @@ const postSale = async (sales) => {
     const halquery = 'INSERT INTO StoreManager.sales_products';
     const otherHalfQuery = '(sale_id, product_id, quantity) VALUES (?,?,?);';
     const query2 = `${halquery} ${otherHalfQuery}`;
-    
-    // const query2 = 'INSERT INTO StoreManager.sales_products\
-    //   (sale_id, product_id, quantity) VALUES (?,?,?);';
     await connection.execute(query2, [id, productId, quantity]);
   });
 
-  return { id, itemSold: sales };
+  return { id, itemsSold: sales };
 };
 
 module.exports = {
