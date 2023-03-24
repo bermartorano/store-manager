@@ -15,6 +15,19 @@ const postSale = async (sales) => {
   return salesPosted;
 };
 
+const getAllSales = async () => {
+  const allSales = await salesModel.getAllSales();
+  return allSales;
+};
+
+const getSaleById = async (id) => {
+  const saleById = await salesModel.getSaleById(id);
+  if (saleById.length === 0) throw new Error('Sale not found', { cause: { statusCode: 404 } });
+  return saleById;
+};
+
 module.exports = {
   postSale,
+  getAllSales,
+  getSaleById,
 };

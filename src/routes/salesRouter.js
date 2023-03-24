@@ -8,6 +8,9 @@ const {
 
 const salesRouter = Router();
 
+salesRouter.get('/sales', salesController.getAllSales);
+salesRouter.get('/sales/:id', salesController.getSaleById);
+
 salesRouter.post(
   '/sales',
   isThereProductId,
