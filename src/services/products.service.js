@@ -16,8 +16,16 @@ const postProduct = async (name) => {
   return product;
 };
 
+const updateProduct = async (id, name) => {
+  const updateInfo = await productsModel.updateProduct(id, name);
+  const idNotMatched = updateInfo.newRowInfo.includes('Rows matched: 0');
+  if (idNotMatched) throw new Error('Product not found', { cause: { statusCode: 404 } });
+  return updateInfo;
+};
+
 module.exports = {
   getAllProducts,
   getProductById,
   postProduct,
+  updateProduct,
 };
