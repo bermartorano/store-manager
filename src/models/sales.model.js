@@ -1,5 +1,5 @@
 const connection = require('../connection');
-
+// oi!
 const postSale = async (sales) => {
   const timeStamp = new Date();
   const query1 = 'INSERT INTO StoreManager.sales (date) VALUES (?);';
