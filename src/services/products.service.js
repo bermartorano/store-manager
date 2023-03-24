@@ -24,8 +24,12 @@ const updateProduct = async (id, name) => {
 };
 
 const deleteProduct = async (id) => {
-  const deletedProduct = await productsModel.deleteProduct();
-  
+  const deletedProductaffectedRows = await productsModel.deleteProduct(id);
+  if (deletedProductaffectedRows === 0) {
+    throw new Error('Product not found', { cause: { statusCode: 404 } });
+  }
+  console.log('cheuei aqui!!!');
+  return true;
 };
 
 module.exports = {
