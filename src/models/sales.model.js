@@ -13,7 +13,7 @@ const postSale = async (sales) => {
     return connection.execute(query2, [id, productId, quantity]);
   });
 
-  Promise.all(savingSales);
+  await Promise.all(savingSales);
 
   return { id, itemsSold: sales };
 };
