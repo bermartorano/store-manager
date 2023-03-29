@@ -28,7 +28,6 @@ const deleteProduct = async (id) => {
   if (deletedProductaffectedRows === 0) {
     throw new Error('Product not found', { cause: { statusCode: 404 } });
   }
-  console.log('cheuei aqui!!!');
   return true;
 };
 
