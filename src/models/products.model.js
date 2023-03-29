@@ -21,7 +21,8 @@ const postProduct = async (name) => {
 const updateProduct = async (id, name) => {
   const query = 'UPDATE StoreManager.products SET name = ? WHERE id = ?;';
   const [result] = await connection.execute(query, [name, id]);
-  return { updateInfo: { id, name }, newRowInfo: result.info };
+  const infoToReturn = { updateInfo: { id, name }, newRowInfo: result.info };
+  return infoToReturn;
 };
 
 const deleteProduct = async (id) => {

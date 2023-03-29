@@ -3,9 +3,16 @@ const sinon = require('sinon');
 
 const connection = require('../../../src/connection');
 const productsModel = require('../../../src/models/products.model');
-const { allProductsArrayMock, allProductsMock, oneProductMock, postReturnMock } = require('../mocks');
+const {
+  allProductsArrayMock,
+  allProductsMock,
+  oneProductMock,
+  postReturnMock,
+  updatedProductMock,
+  updateProductRightReturn,
+} = require('./mocks');
 
-describe('Testes unitários do model de products', function () {
+describe('Testes unitários da camada model de products', function () {
   afterEach(function () {
     sinon.restore();
   });
@@ -26,6 +33,12 @@ describe('Testes unitários do model de products', function () {
     sinon.stub(connection, 'execute').resolves(postReturnMock);
     const result = await productsModel.postProduct(oneProductMock.name);
     expect(result).to.be.deep.equal({ name: oneProductMock.name, id: postReturnMock[0].insertId });
+  });
+
+  it('A função updateProduct retorna o objeto correto', async function () {
+    sinon.stub(connection, 'execute').resolves(updatedProductMock);
+    const result = await productsModel.updateProduct(oneProductMock.id, oneProductMock.name);
+    expect(result).to.deep.equal(updateProductRightReturn);
   });
 
 })
