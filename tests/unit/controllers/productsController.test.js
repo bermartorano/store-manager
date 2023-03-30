@@ -14,19 +14,19 @@ describe('Testes unitários da camada controller de products', function () {
     sinon.restore();
   });
 
-  // it('Testa se a função getAllProducts responde o objeto correto.', async function () {
-  //   const req = {};
-  //   const res = {};
-  //   const next = sinon.stub();
-  //   res.status = sinon.stub().returns(res);
-  //   res.json = sinon.stub().returns();
-  //   sinon.stub(productsService, 'getAllProducts').resolves(mock.allProductsMock);
+  it('Testa se a função getAllProducts responde o objeto correto.', async function () {
+    const req = {};
+    const res = {};
+    const next = sinon.stub();
+    res.status = sinon.stub().returns(res);
+    res.json = sinon.stub().returns();
+    sinon.stub(productsService, 'getAllProducts').resolves(mock.allProductsMock);
     
-  //   await productsController.getAllProducts(res, req, next); 
+    await productsController.getAllProducts(req, res, next); 
 
-  //   expect(res.status).to.have.been.calledWith(200);
-  //   expect(res.json).to.have.been.calledWith(mock.allProductsMock);
-  // });
+    expect(res.status).to.have.been.calledWith(200);
+    expect(res.json).to.have.been.calledWith(mock.allProductsMock);
+  });
 
   it('Testa se a função getProductById responde o status e o objeto correto.', async function () {
     const req = { params: { id: 1 } };
