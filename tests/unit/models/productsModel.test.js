@@ -12,7 +12,7 @@ const {
   updateProductRightReturn,
 } = require('./mocks');
 
-describe('Testes unitários da camada model de products', function () {
+describe('Testes unitários da camada model da rota products', function () {
   afterEach(function () {
     sinon.restore();
   });
