@@ -4,6 +4,12 @@ const allProductsMock = [
   { id: 3, name: 'Escudo do Capitão América' }
 ];
 
+const servicePostProduckReturnMock = {
+  name: 'Capa do superman',
+  id: 5,
+}
+
 module.exports = {
   allProductsMock,
+  servicePostProduckReturnMock,
 }

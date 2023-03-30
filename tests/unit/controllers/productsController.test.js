@@ -42,4 +42,19 @@ describe('Testes unitários da camada controller de products', function () {
     expect(res.status).to.have.been.calledWith(200);
     expect(res.json).to.have.been.calledWith(mock.allProductsMock[0]);
   });
+
+  it('Testa se a função postProduct responde o objeto correto.', async function () {
+    const req = { body: { name: 'Capa do Superman' } };
+    const res = {};
+    const next = sinon.stub();
+
+    res.status = sinon.stub().returns(res);
+    res.json = sinon.stub().returns();
+    sinon.stub(productsService, 'postProduct').resolves(mock.servicePostProduckReturnMock);
+
+    await productsController.postProduct(req, res, next);
+
+    expect(res.status).to.have.been.calledWith(201);
+    expect(res.json).to.have.been.calledWith(mock.servicePostProduckReturnMock);
+  });
 });
