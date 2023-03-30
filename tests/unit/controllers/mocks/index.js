@@ -9,7 +9,18 @@ const servicePostProduckReturnMock = {
   id: 5,
 }
 
+const updateReqMock = {
+  "name": "Martelo do Batman"
+};
+
+const serviceUpdateProductMock = {
+  updateInfo: { id: '1', name: 'Martelo do Batman' },
+  newRowInfo: 'Rows matched: 1  Changed: 1  Warnings: 0'
+};
+
 module.exports = {
   allProductsMock,
   servicePostProduckReturnMock,
+  updateReqMock,
+  serviceUpdateProductMock,
 }
